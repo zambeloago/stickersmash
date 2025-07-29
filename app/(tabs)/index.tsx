@@ -1,7 +1,7 @@
 import { View, StyleSheet } from "react-native";
 import ImageViewer from "@/components/ImageViewer";
-
-const PlaceholderImage = require("@assets/images/background-image.png");
+import Button from "@/components/Button";
+const PlaceholderImage = require("@/assets/images/background-image.png");
 
 export default function Index() {
   return (
@@ -9,27 +9,26 @@ export default function Index() {
       <View style={styles.imageContainer}>
         <ImageViewer imgSource={PlaceholderImage}/>
       </View>
+      <View style={styles.footerContainer}>
+          <Button label="Choose a photo"/>
+          <Button label="Use this photo" />
+      </View>
     </View>
   );
 }
 
-const styles = StyleSheet.create ({
+const styles = StyleSheet.create({
     container: {
-        backgroundColor: "black",
         flex: 1,
-        justifyContent: "center",
-        alignItems: "center",
-        borderRadius: 10,
-        elevation: 2,
-
+        backgroundColor: '#25292e',
+        alignItems: 'center',
     },
-    text: {
-
-        color: "white"
+    imageContainer: {
+        flex: 1,
+        paddingTop: 28,
     },
-    link: {
-        textDecorationLine: "underline",
-        color: "white",
-    }
-
+    footerContainer: {
+        flex: 1 / 3,
+        alignItems: 'center',
+    },
 });
